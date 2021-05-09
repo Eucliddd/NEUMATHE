@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=0.8">
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/vue.js"></script>
+    <script src="static/js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/css/index.css">
+</head>
+<body style="margin: 0;width: 1900px">
+<div id="app">
+    <el-container>
+        <!------ 网页导航栏 ------>
+        <el-header>
+            <div style="float: right">
+                <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal"
+                         @select="handleSelect">
+                    <el-menu-item index="1">首页</el-menu-item>
+                    <el-submenu index="2">
+                        <template slot="title">章节练习</template>
+                        <el-menu-item index="2-1">高等数学</el-menu-item>
+                        <el-menu-item index="2-2">复变函数</el-menu-item>
+                        <el-menu-item index="2-3">线性代数</el-menu-item>
+                        <el-menu-item index="2-4">概率统计</el-menu-item>
+                    </el-submenu>
+                    <el-menu-item index="3">练习记录</el-menu-item>
+                    <el-menu-item index="4">下载客户端</el-menu-item>
+                    <el-menu-item index="5">关于我们</el-menu-item>
+                    <el-avatar
+                            style="margin: 10px"
+                            src="static/img/user-icon.png">
+                    </el-avatar>
+                </el-menu>
+            </div>
+        </el-header>
+        <!------ 网页主部分 ------>
+        <el-main>
+            <!------ banner ------>
+            <template>
+                <el-carousel height="500px" indicator-position="outside">
+                    <el-carousel-item v-for="item in banners" :key="item">
+                        <center>
+                            <a :href="item.url">
+                                <el-image :src="item.img" :fit="fit"></el-image>
+                            </a><br>
+                            {{item.label}}
+                        </center>
+                    </el-carousel-item>
+                </el-carousel>
+            </template>
+            <!------ 分割线 ------>
+            <el-divider></el-divider>
+            <br><br>
+            <!------ powered by ------>
+            <div style="text-align: center;padding-bottom: 70px">
+                    <span>
+                        <el-button @click="goWeb" type="primary">WebAPP</el-button><br><br>
+                        <span style="margin-top: -50px">点击前往Web练习页面</span>
+                    </span>
+                <br><br><br><br><br>
+                    <span>
+                        <el-button @click="goApp" type="primary">LocalApp</el-button><br><br>
+                        <span style="margin-top: -50px">点击下载客户端</span>
+                    </span>
+            </div>
+        </el-main>
+    </el-container>
+    <!------ 网页页脚 ------>
+    <el-footer style="padding: 0">
+        <div style="background-color: black;text-align: center;font-size: small;color: white;padding: 15px 0;margin: 0">
+            <p>
+                东北大学数学题库练习系统 Powered by Vue, jQuery, Elements, Spring Boot<br/>
+                Designed by @i.Pear, 2020.10.31
+            </p>
+            <p>
+                <a href="http://beian.miit.gov.cn/">辽ICP备2021003455号</a>
+            </p>
+        </div>
+    </el-footer>
+</div>
+<script type="text/javascript" src="static/js/cartoon.js"></script>
+<script>
+    var Main = {
+        data() {
+            return {
+                value: true,
+                banners: [
+                    {
+                        img: 'static/img/main-gui.png',
+                        label: '本地客户端',
+                        url: 'https://github.com/i-Pear/NEU-Mathe-Local/tree/master/Release'
+                    },
+                    {
+                        img: 'static/img/exercising.png',
+                        label: '网页在线练习',
+                        url: '/train?chapter=1-1'
+                    },
+                ],
+                fit: "contain",
+            };
+        },
+        methods: {
+            goWeb(){
+                window.location="/train?chapter=1-1";
+            },
+            goApp(){
+                window.location="https://github.com/i-Pear/NEU-Mathe-Local/tree/master/Release";
+            },
+            handleSelect(key, keyPath) {
+                if(key==="1"){
+                    window.location="/";
+                }else if(key==="2-1"){
+                    window.location="/train?chapter=1-1";
+                }else if(key==="2-2"){
+                    this.$notify.success({
+                        title: '提示',
+                        message: '本题库尚未开放'
+                    });
+                }else if(key==="2-3"){
+                    this.$notify.success({
+                        title: '提示',
+                        message: '本题库尚未开放'
+                    });
+                }else if(key==="2-4"){
+                    this.$notify.success({
+                        title: '提示',
+                        message: '本题库尚未开放'
+                    });
+                }else if(key==="3"){
+                    window.location="/history";
+                }else if(key==="4"){
+                    window.location="/app";
+                }else if(key==="5"){
+                    window.location="/about";
+                }
+            },
+        }
+    };
+    var Ctor = Vue.extend(Main);
+    new Ctor().$mount('#app');
+</script>
+</body>
+</html>

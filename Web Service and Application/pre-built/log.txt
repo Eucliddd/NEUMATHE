@@ -1,0 +1,275 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.3.5.RELEASE)
+
+2021-04-28 21:56:29.450  INFO 18237 --- [           main] c.i.web.training.TrainingApplication     : Starting TrainingApplication v0.0.1-SNAPSHOT on iZgbo66nnfoa3zZ with PID 18237 (/root/training/training-0.0.1-SNAPSHOT.jar started by root in /root/training)
+2021-04-28 21:56:29.457  INFO 18237 --- [           main] c.i.web.training.TrainingApplication     : No active profile set, falling back to default profiles: default
+2021-04-28 21:56:31.586  INFO 18237 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-04-28 21:56:31.775  INFO 18237 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 178ms. Found 3 JPA repository interfaces.
+2021-04-28 21:56:33.298  INFO 18237 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (https)
+2021-04-28 21:56:33.331  INFO 18237 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-28 21:56:33.332  INFO 18237 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-04-28 21:56:33.503  INFO 18237 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-28 21:56:33.503  INFO 18237 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3910 ms
+2021-04-28 21:56:34.579  INFO 18237 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-28 21:56:34.860  INFO 18237 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-28 21:56:35.101  WARN 18237 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-28 21:56:35.252  INFO 18237 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.22.Final
+2021-04-28 21:56:36.026  INFO 18237 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-04-28 21:56:36.080  INFO 18237 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-04-28 21:56:36.600  INFO 18237 --- [         task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-04-28 21:56:37.653  INFO 18237 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (https) with context path ''
+2021-04-28 21:56:37.660  INFO 18237 --- [           main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2021-04-28 21:56:37.877  INFO 18237 --- [         task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-04-28 21:56:38.126  INFO 18237 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-04-28 21:56:38.475  INFO 18237 --- [io-8080-exec-10] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-28 21:56:38.475  INFO 18237 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-28 21:56:38.531  INFO 18237 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed initialization in 56 ms
+2021-04-28 21:56:40.369  INFO 18237 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-28 21:56:40.390  INFO 18237 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-28 21:56:41.564  INFO 18237 --- [           main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2021-04-28 21:56:41.627  INFO 18237 --- [           main] c.i.web.training.TrainingApplication     : Started TrainingApplication in 13.242 seconds (JVM running for 14.379)
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+2021-05-05 01:49:48.545  INFO 18237 --- [nio-8080-exec-1] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in the HTTP protocol [RTSP/1.00x0d0x0a0x0d...]
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:559) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
+
+2021-05-06 15:54:53.213  INFO 18237 --- [extShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-06 15:54:53.227  INFO 18237 --- [extShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-06 15:54:53.230  INFO 18237 --- [extShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-05-06 15:54:53.245  INFO 18237 --- [extShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.3.5.RELEASE)
+
+2021-05-07 20:22:31.233  INFO 5138 --- [           main] c.i.web.training.TrainingApplication     : Starting TrainingApplication v0.0.1-SNAPSHOT on iZgbo66nnfoa3zZ with PID 5138 (/root/training/training-0.0.1-SNAPSHOT.jar started by root in /root/training)
+2021-05-07 20:22:31.241  INFO 5138 --- [           main] c.i.web.training.TrainingApplication     : No active profile set, falling back to default profiles: default
+2021-05-07 20:22:33.182  INFO 5138 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-05-07 20:22:33.379  INFO 5138 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 180ms. Found 3 JPA repository interfaces.
+2021-05-07 20:22:35.016  INFO 5138 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (https)
+2021-05-07 20:22:35.047  INFO 5138 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-07 20:22:35.047  INFO 5138 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-05-07 20:22:35.203  INFO 5138 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-07 20:22:35.205  INFO 5138 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3826 ms
+2021-05-07 20:22:36.277  INFO 5138 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-07 20:22:36.591  INFO 5138 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-07 20:22:36.728  WARN 5138 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-07 20:22:36.894  INFO 5138 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.22.Final
+2021-05-07 20:22:37.622  INFO 5138 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-05-07 20:22:37.632  INFO 5138 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-05-07 20:22:38.186  INFO 5138 --- [         task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-05-07 20:22:39.254  INFO 5138 --- [         task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-05-07 20:22:39.291  INFO 5138 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (https) with context path ''
+2021-05-07 20:22:39.300  INFO 5138 --- [           main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2021-05-07 20:22:39.429  INFO 5138 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-05-07 20:22:41.586  INFO 5138 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-07 20:22:41.610  INFO 5138 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-07 20:22:42.307  INFO 5138 --- [           main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2021-05-07 20:22:42.323  INFO 5138 --- [           main] c.i.web.training.TrainingApplication     : Started TrainingApplication in 12.159 seconds (JVM running for 13.604)
+2021-05-07 20:23:13.076  INFO 5138 --- [nio-8080-exec-9] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-07 20:23:13.077  INFO 5138 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-07 20:23:13.094  INFO 5138 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select user0_.uid as col_0_0_ from users user0_ where user0_.alias=? limit ?
+Hibernate: select user0_.uid as uid1_2_0_, user0_.alias as alias2_2_0_, user0_.password as password3_2_0_ from users user0_ where user0_.uid=?
+Hibernate: insert into users (alias, password, uid) values (?, ?, ?)
+Hibernate: select exercisere0_.uid as uid1_0_0_, exercisere0_.record as record2_0_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: insert into exercise_record (record, uid) values (?, ?)
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: update exercise_record set record=? where uid=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: update exercise_record set record=? where uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+2021-05-08 21:38:06.703  WARN 5138 --- [nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; nested exception is java.lang.NumberFormatException: For input string: "undefined"]
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: update exercise_record set record=? where uid=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select user0_.uid as col_0_0_ from users user0_ where user0_.alias=? limit ?
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select user0_.uid as col_0_0_ from users user0_ where user0_.alias=? limit ?
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: update exercise_record set record=? where uid=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select user0_.uid as col_0_0_ from users user0_ where user0_.alias=? limit ?
+Hibernate: select user0_.uid as col_0_0_ from users user0_ where user0_.alias=? limit ?
+Hibernate: select user0_.uid as uid1_2_0_, user0_.alias as alias2_2_0_, user0_.password as password3_2_0_ from users user0_ where user0_.uid=?
+Hibernate: insert into users (alias, password, uid) values (?, ?, ?)
+Hibernate: select exercisere0_.uid as uid1_0_0_, exercisere0_.record as record2_0_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: insert into exercise_record (record, uid) values (?, ?)
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: update exercise_record set record=? where uid=?
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select user0_.uid as col_0_0_ from users user0_ where user0_.alias=? limit ?
+Hibernate: select user0_.uid as col_0_0_ from users user0_ where user0_.alias=? limit ?
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: update exercise_record set record=? where uid=?
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: update exercise_record set record=? where uid=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: update exercise_record set record=? where uid=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: update exercise_record set record=? where uid=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select user0_.uid as uid1_2_, user0_.alias as alias2_2_, user0_.password as password3_2_ from users user0_ where user0_.uid=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?
+Hibernate: select exercisere0_.uid as uid1_0_, exercisere0_.record as record2_0_ from exercise_record exercisere0_ where exercisere0_.uid=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.chapter=?
+Hibernate: select problem0_.id as id1_1_, problem0_.answer as answer2_1_, problem0_.chapter as chapter3_1_, problem0_.img0 as img4_1_, problem0_.img1 as img5_1_, problem0_.img2 as img6_1_, problem0_.img3 as img7_1_, problem0_.img4 as img8_1_, problem0_.imgans as imgans9_1_ from problems problem0_ where problem0_.id=?

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mathe.Views.ZoomPage"
+             BindingContext="{Binding ZoomPageViewModel, Source={StaticResource ViewModelLocator}}"
+             xmlns:ls="clr-namespace:Mathe.Services;assembly=Mathe"
+             xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors"
+             ls:NavigationContext.NavigationParameter="{Binding ImageSource}">
+    <ContentPage.Content>
+        <Grid>
+            <Image Grid.Column="0" Grid.Row="0" Source="{Binding ImageSource}" >
+                 <Image.GestureRecognizers> 
+                     <TapGestureRecognizer  
+                         NumberOfTapsRequired="1"  
+                         Command="{Binding ZoomPageViewModel.TapCommand, Source={StaticResource ViewModelLocator}}"/>
+                 </Image.GestureRecognizers> 
+            </Image>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mathe.Views.ProblemPage"
+             BindingContext="{Binding ProblemPageViewModel, Source={StaticResource ViewModelLocator}}"
+             xmlns:ls="clr-namespace:Mathe.Services;assembly=Mathe"
+             xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors"
+             Title="{Binding ChapterName}"
+             ls:NavigationContext.NavigationParameter="{Binding Chapter}">
+    <ContentPage.Behaviors>
+        <behaviors:EventHandlerBehavior EventName="Appearing">
+            <behaviors:ActionCollection>
+                <behaviors:InvokeCommandAction Command="{Binding InitCommand}" />
+            </behaviors:ActionCollection>
+        </behaviors:EventHandlerBehavior>
+    </ContentPage.Behaviors>
+    <ContentPage.ToolbarItems>
+        <!--<ToolbarItem Text="{Binding MarkName}"
+                     Order="Primary"
+                     Priority="0"
+                     Command="{Binding MarkDisplayCommand}"/>
+        <ToolbarItem Text="{Binding DoneName}"
+                     Order="Primary"
+                     Command="{Binding DoneDisplayCommand}"
+                     Priority="1"/>-->
+        <ToolbarItem Text="Settings"
+                     Order="Secondary"
+                     Command="{Binding SettingCommand}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="9*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <CarouselView Grid.Row="0"
+                          ItemsSource="{Binding Problems}"
+                          Margin="10"
+                          CurrentItem="{Binding CurrentItem}"
+                          Position="{Binding CurrentPosition}"
+                          PositionChangedCommand="{Binding PositionChangedCommand}">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame HasShadow="True"
+                               BorderColor="DarkGray"
+                               CornerRadius="5"
+                               Margin="20"
+                               HorizontalOptions="Center"
+                               VerticalOptions="CenterAndExpand">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="2*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Image Grid.Row="0" Source="{Binding img0}" >
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer 
+                                            NumberOfTapsRequired="1" 
+                                            Command="{Binding ProblemPageViewModel.TapCommand, Source={StaticResource ViewModelLocator}}"
+                                            CommandParameter="{Binding img0}"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image 
+                                    Grid.Row="1"
+                                    Source="{Binding img1}">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer 
+                                            NumberOfTapsRequired="2"
+                                            Command="{Binding ProblemPageViewModel.DoubleTapCommand, Source={StaticResource ViewModelLocator}}"
+                                            CommandParameter="1"/>
+                                        <TapGestureRecognizer 
+                                            NumberOfTapsRequired="1" 
+                                            Command="{Binding ProblemPageViewModel.TapCommand, Source={StaticResource ViewModelLocator}}"
+                                            CommandParameter="{Binding img1}"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Grid.Row="2" Source="{Binding img2}" >
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer 
+                                            NumberOfTapsRequired="2"
+                                            Command="{Binding ProblemPageViewModel.DoubleTapCommand, Source={StaticResource ViewModelLocator}}"
+                                            CommandParameter="2"/>
+                                        <TapGestureRecognizer 
+                                            NumberOfTapsRequired="1" 
+                                            Command="{Binding ProblemPageViewModel.TapCommand, Source={StaticResource ViewModelLocator}}"
+                                            CommandParameter="{Binding img2}"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Grid.Row="3" Source="{Binding img3}">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer 
+                                            NumberOfTapsRequired="2"
+                                            Command="{Binding ProblemPageViewModel.DoubleTapCommand, Source={StaticResource ViewModelLocator}}"
+                                            CommandParameter="3"/>
+                                        <TapGestureRecognizer 
+                                            NumberOfTapsRequired="1" 
+                                            Command="{Binding ProblemPageViewModel.TapCommand, Source={StaticResource ViewModelLocator}}"
+                                            CommandParameter="{Binding img3}"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Grid.Row="4" Source="{Binding img4}" >
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer 
+                                            NumberOfTapsRequired="2"
+                                            Command="{Binding ProblemPageViewModel.DoubleTapCommand, Source={StaticResource ViewModelLocator}}"
+                                            CommandParameter="4"/>
+                                        <TapGestureRecognizer 
+                                            NumberOfTapsRequired="1" 
+                                            Command="{Binding ProblemPageViewModel.TapCommand, Source={StaticResource ViewModelLocator}}"
+                                            CommandParameter="{Binding img4}"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0"
+                       Text="{Binding CurrentPercent}"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"/>
+                <Button 
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Grid.Column="1" Text="Mark"
+                    Command="{Binding MarkCommand}"
+                    TextColor="{Binding MarkColor}"/>
+                <Button
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Grid.Column="2" Text="Answer"
+                    Command="{Binding DisplayAnswerCommand}"/>
+                <Button
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Grid.Column="3" Text="Done" 
+                    Command="{Binding DoneCommand}"
+                    TextColor="{Binding DoneColor}"/>
+                
+                </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

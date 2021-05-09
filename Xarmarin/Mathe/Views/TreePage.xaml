@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:b="clr-namespace:Behaviors;assembly=Behaviors"
+             xmlns:syncfusion="clr-namespace:Syncfusion.XForms.TreeView;assembly=Syncfusion.SfTreeView.XForms"
+             xmlns:local="clr-namespace:Mathe;assembly=Mathe"
+             BindingContext="{Binding TreePageViewModel, Source={StaticResource ViewModelLocator}}"
+             x:Class="Mathe.Views.TreePage"
+             Title="高等数学练习题库">
+    <ContentPage.Behaviors>
+        <b:EventHandlerBehavior EventName="Appearing">
+            <b:ActionCollection>
+                <b:InvokeCommandAction Command="{Binding InitCommand}" />
+            </b:ActionCollection>
+        </b:EventHandlerBehavior>
+    </ContentPage.Behaviors>
+    <ContentPage.Content>
+
+        <syncfusion:SfTreeView x:Name="TreeView"
+                               ItemsSource="{Binding Tree }"
+                               ItemHeight="40"
+                               Indentation="15"
+                               ExpanderWidth="40"
+                               ChildPropertyName="children"
+                               AutoExpandMode="AllNodesExpanded">
+            <syncfusion:SfTreeView.Behaviors>
+                <b:EventHandlerBehavior EventName="ItemTapped">
+                    <b:ActionCollection>
+                        <b:InvokeCommandAction Command="{Binding ItemCommand}" />
+                    </b:ActionCollection>
+                </b:EventHandlerBehavior>
+            </syncfusion:SfTreeView.Behaviors>
+            <syncfusion:SfTreeView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <Grid x:Name="Grid" RowSpacing="0" BackgroundColor="Transparent">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="1" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="1" />
+                                </Grid.RowDefinitions>
+                                <Label Grid.Column="0"
+                                       Grid.Row="0"
+                                       LineBreakMode="CharacterWrap"
+                                       Text="{Binding text}"
+                                       VerticalTextAlignment="Center" />
+
+                            </Grid>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </syncfusion:SfTreeView.ItemTemplate>
+
+
+        </syncfusion:SfTreeView>
+    </ContentPage.Content>
+</ContentPage>
